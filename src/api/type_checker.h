@@ -11,6 +11,8 @@ Author: Leonardo de Moura
 #include "api/decl.h"
 #include "api/lean_type_checker.h"
 namespace lean {
+
+// reinterpret_cast: Allows any pointer to be converted into any other pointer type.
 inline type_checker * to_type_checker(lean_type_checker n) { return reinterpret_cast<type_checker *>(n); }
 inline type_checker & to_type_checker_ref(lean_type_checker n) { return *reinterpret_cast<type_checker *>(n); }
 inline lean_type_checker of_type_checker(type_checker * n) { return reinterpret_cast<lean_type_checker>(n); }
